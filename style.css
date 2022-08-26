@@ -42,10 +42,21 @@ table {
     width: 100%;
     background-color: white;
 }
-
 th,
 td {
     padding: 0.25rem;
     text-align: left;
     border: 1px solid #ccc;
+}
+#btn-excluir {
+    background-color: rgba(255, 0, 0, 0.572);
+}
+#btn-excluir:hover {
+    background-color: red;
+}
+#btn-editar {
+    background-color: rgba(0, 128, 0, 0.567);
+}
+#btn-editar:hover {
+    background-color: green;
 }

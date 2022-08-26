@@ -34,8 +34,8 @@ function imprimirPedidos() {
             <td>${pedidos[i].camisetaM}</td>
             <td>${pedidos[i].camisetaG}</td>
             <td>R$${pedidos[i].soma}</td>
-            <td><button onclick="editar(${i})">Editar</button></td>
-            <td><button onclick="excluir(${i})">Excluir</button></td>
+            <td><button id="btn-editar" onclick="editar(${i})">Editar</button></td>
+            <td><button id="btn-excluir" onclick="excluir(${i})">Excluir</button></td>
           </tr>
       
         `;
