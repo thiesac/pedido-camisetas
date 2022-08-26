@@ -47,20 +47,11 @@ function editar(i) {
   pedidos[i].camisetaM = document.getElementById("quant-m").value;
   pedidos[i].camisetaG = document.getElementById("quant-g").value;
 
-  //para poder atualizar a *soma*
-  pedidos[i].camisetaP = parseFloat(
-    10 * document.getElementById("quant-p").value
-  );
-  pedidos[i].camisetaM = parseFloat(
-    12 * document.getElementById("quant-m").value
-  );
-  pedidos[i].camisetaG = parseFloat(
-    15 * document.getElementById("quant-g").value
-  );
-
   //atualiza o valor da *soma*
   pedidos[i].soma =
-    pedidos[i].camisetaP + pedidos[i].camisetaM + pedidos[i].camisetaG;
+    parseFloat(document.getElementById("quant-p").value * 10) +
+    parseFloat(document.getElementById("quant-m").value * 12) +
+    parseFloat(document.getElementById("quant-g").value * 15);
 
   console.log(pedidos[i].soma);
   imprimirPedidos();
