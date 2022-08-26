@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(175, 230, 238);
+    justify-content: center;
+    display: grid;
+}
+h1 {
+    color: rgb(175, 230, 238);
+    text-align: center;
+}
+div {
+    webkit-box-shadow: 10px 11px 13px 1px rgba(0, 0, 0, 0.51);
+    moz-box-shadow: 10px 11px 13px 1px rgba(0, 0, 0, 0.51);
+    box-shadow: 10px 11px 13px 1px rgba(0, 0, 0, 0.51);
+}
+.div-input {
+    justify-content: center;
+    margin: auto;
+    background-color: rgba(255, 255, 255);
+}
+input {
+    border: 2px solid rgb(175, 230, 238);
+    border-radius: 1px;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+button {
+    margin: auto 10px auto 5px;
+    background-color: rgb(175, 230, 238);
+    border: none;
+    padding: 8px;
+    color: white;
+    border-radius: 2px;
+}
+button:hover {
+    cursor: pointer;
+}
+table {
+    margin-top: 40px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+th,
+td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
