@@ -35,7 +35,7 @@ function imprimirPedidos() {
             <td>${pedidos[i].camisetaG}</td>
             <td>R$${pedidos[i].soma}</td>
             <td><button onclick="editar(${i})">Editar</button></td>
-            <td><button onclick="excluir()">Excluir</button></td>
+            <td><button onclick="excluir(${i})">Excluir</button></td>
           </tr>
       
         `;
@@ -63,5 +63,10 @@ function editar(i) {
     pedidos[i].camisetaP + pedidos[i].camisetaM + pedidos[i].camisetaG;
 
   console.log(pedidos[i].soma);
+  imprimirPedidos();
+}
+
+function excluir(i) {
+  pedidos.splice(i, 1);
   imprimirPedidos();
 }
