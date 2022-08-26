@@ -1,10 +1,13 @@
 let pedidos = [];
 let camisetaP;
+let p;
+let m;
+let g;
 
 function calcular() {
-  const p = document.getElementById("quant-p").value;
-  const m = document.getElementById("quant-m").value;
-  const g = document.getElementById("quant-g").value;
+  p = document.getElementById("quant-p").value;
+  m = document.getElementById("quant-m").value;
+  g = document.getElementById("quant-g").value;
 
   camisetaP = parseFloat(10 * p);
   camisetaM = parseFloat(12 * m);
@@ -20,6 +23,7 @@ function calcular() {
   pedidos.push(addPedido);
 
   imprimirPedidos();
+  limpar();
 }
 
 function imprimirPedidos() {
@@ -43,9 +47,19 @@ function imprimirPedidos() {
 }
 
 function editar(i) {
-  pedidos[i].camisetaP = document.getElementById("quant-p").value;
-  pedidos[i].camisetaM = document.getElementById("quant-m").value;
-  pedidos[i].camisetaG = document.getElementById("quant-g").value;
+  if (document.getElementById("quant-p").value == "") {
+    document.getElementById("quant-p").value = p;
+  }
+  if (document.getElementById("quant-m").value == "") {
+    document.getElementById("quant-m").value = m;
+  }
+  if (document.getElementById("quant-g").value == "") {
+    document.getElementById("quant-g").value = g;
+  } else {
+    pedidos[i].camisetaP = document.getElementById("quant-p").value;
+    pedidos[i].camisetaM = document.getElementById("quant-m").value;
+    pedidos[i].camisetaG = document.getElementById("quant-g").value;
+  }
 
   //atualiza o valor da *soma*
   pedidos[i].soma =
@@ -55,9 +69,17 @@ function editar(i) {
 
   console.log(pedidos[i].soma);
   imprimirPedidos();
+  limpar();
 }
 
 function excluir(i) {
   pedidos.splice(i, 1);
   imprimirPedidos();
+  limpar();
+}
+
+function limpar() {
+  document.getElementById("quant-p").value = "";
+  document.getElementById("quant-m").value = "";
+  document.getElementById("quant-g").value = "";
 }
