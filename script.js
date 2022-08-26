@@ -47,14 +47,19 @@ function imprimirPedidos() {
 }
 
 function editar(i) {
+  //caso campo "quant-p" esteja vazio
   if (document.getElementById("quant-p").value == "") {
     document.getElementById("quant-p").value = p;
   }
+  //caso campo "quant-m" esteja vazio
   if (document.getElementById("quant-m").value == "") {
     document.getElementById("quant-m").value = m;
   }
+  //caso campo "quant-g" esteja vazio
   if (document.getElementById("quant-g").value == "") {
     document.getElementById("quant-g").value = g;
+    pedidos[i].camisetaP = document.getElementById("quant-p").value;
+    pedidos[i].camisetaM = document.getElementById("quant-m").value;
   } else {
     pedidos[i].camisetaP = document.getElementById("quant-p").value;
     pedidos[i].camisetaM = document.getElementById("quant-m").value;
@@ -67,7 +72,6 @@ function editar(i) {
     parseFloat(document.getElementById("quant-m").value * 12) +
     parseFloat(document.getElementById("quant-g").value * 15);
 
-  console.log(pedidos[i].soma);
   imprimirPedidos();
   limpar();
 }
